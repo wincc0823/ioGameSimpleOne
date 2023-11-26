@@ -50,7 +50,7 @@ public class DemoLogicServer extends AbstractBrokerClientStartup {
 
     @Override
     public BrokerClientBuilder createBrokerClientBuilder() {
-        BrokerClientBuilder builder = BrokerClient.newBuilder();
+        var builder = BrokerClient.newBuilder();
         builder.appName("demo游戏逻辑服");
         return builder;
     }
@@ -58,9 +58,9 @@ public class DemoLogicServer extends AbstractBrokerClientStartup {
     @Override
     public BrokerAddress createBrokerAddress() {
         // 类似 127.0.0.1 ，但这里是本机的 ip
-        String localIp = NetworkKit.LOCAL_IP;
+        var localIp = NetworkKit.LOCAL_IP;
         // broker （游戏网关）默认端口
-        int brokerPort = 10200;
+        var brokerPort = 10200;
         return new BrokerAddress(localIp, brokerPort);
     }
 }

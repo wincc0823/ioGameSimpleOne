@@ -30,11 +30,9 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         // 游戏对外服端口
-        int port = 10100;
-
+        var port = 10100;
         // 逻辑服
         var demoLogicServer = new DemoLogicServer();
-
         // 启动 对外服、网关服、逻辑服; 并生成游戏业务文档
         NettySimpleHelper.run(port, List.of(demoLogicServer));
     }
